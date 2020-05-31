@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dbmongo = require('./src/connection/TweetConnection');
+
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
@@ -27,10 +28,12 @@ const HOST = '0.0.0.0';
         process.exit()
     }
 })()
+
 app.use((req, res, next) => {
     req.io = io;
     return next();
 });
+
 app.disable('x-powered-by');
 app.use(cors());
 app.use(express.json());
