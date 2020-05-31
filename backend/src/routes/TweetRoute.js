@@ -8,5 +8,6 @@ routes.get('/', (req, res) => res.json({
 }));
 
 routes.get("/tweets", TweetController.index);
+routes.get('/tweets/:id', TweetController.show);
 routes.post("/tweets", TweetController.store);
 module.exports = routes;
