@@ -13,9 +13,9 @@
 - [Colors (console.log with colorful messages)](https://github.com/Marak/colors.js)
 
 ## 📍 Features
-- ✔️ Create a twitter message
+- ✔️ Create a tweet message
 - 📄 List all tweet messages
-- 🧡 Like in a twitter message
+- 🧡 Like in a tweet message
 
 <br>
 
