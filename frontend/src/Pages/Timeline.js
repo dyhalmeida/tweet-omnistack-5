@@ -5,17 +5,20 @@ import twitterLogo from '../twitter.svg'
 import './Timeline.css';
 
 import Tweet from '../Components/Tweet';
+
 export default class Timeline extends Component {
     ENTER = 13;
     state = {
         tweets: [],
         newTweet: '',
     };
+
     async componentDidMount() {
         this.subscribeToEvents();
         const response = await api.get('tweets');
         this.setState({ tweets: response.data });
     }
+
     subscribeToEvents = () => {
         const io = socket('http://localhost:3000');
 
@@ -31,10 +34,12 @@ export default class Timeline extends Component {
             });
         });
     }
+
     handleLogout = () => {
         localStorage.removeItem('@tweet:username');
         window.location.href = '/';
     }
+
     handleNewTweet = async (e) => {
         if (e.keyCode !== this.ENTER) return;
         const content = this.state.newTweet;
@@ -42,9 +47,11 @@ export default class Timeline extends Component {
         await api.post('tweets', { author, content });
         this.setState({ newTweet: '' });
     };
+
     handleInputChange = (e) => {
         this.setState({ newTweet: e.target.value });
     };
+
     render() {
         return (
             <div className="timeline-wrapper">
