@@ -31,6 +31,7 @@ app.use((req, res, next) => {
     req.io = io;
     return next();
 });
+app.disable('x-powered-by');
 app.use(cors());
 app.use(express.json());
 app.use(routes);
