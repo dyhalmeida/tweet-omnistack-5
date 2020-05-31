@@ -7,5 +7,6 @@ routes.get('/', (req, res) => res.json({
     status: 'Twitter API Working !'
 }));
 
+routes.get("/tweets", TweetController.index);
 routes.post("/tweets", TweetController.store);
 module.exports = routes;
