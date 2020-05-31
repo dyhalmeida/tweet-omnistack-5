@@ -3,11 +3,18 @@ import api from '../service/api'
 import twitterLogo from '../twitter.svg'
 import './Timeline.css';
 
+import Tweet from '../Components/Tweet';
 export default class Timeline extends Component {
     ENTER = 13;
     state = {
+        tweets: [],
         newTweet: '',
     };
+    async componentDidMount() {
+        this.subscribeToEvents();
+        const response = await api.get('tweets');
+        this.setState({ tweets: response.data });
+    }
     handleLogout = () => {
         localStorage.removeItem('@tweet:username');
         window.location.href = '/';
@@ -34,6 +41,11 @@ export default class Timeline extends Component {
                         placeholder="O que está acontecendo?"
                     />
                 </form>
+                <ul className="tweet-list">
+                    {this.state.tweets.map(tweet =>
+                        <Tweet key={tweet._id} tweet={tweet} />
+                    )}
+                </ul>
             </div>
 
         )
