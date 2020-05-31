@@ -8,6 +8,10 @@ export default class Timeline extends Component {
     state = {
         newTweet: '',
     };
+    handleLogout = () => {
+        localStorage.removeItem('@tweet:username');
+        window.location.href = '/';
+    }
     handleNewTweet = async (e) => {
         if (e.keyCode !== this.ENTER) return;
         const content = this.state.newTweet;
@@ -21,6 +25,7 @@ export default class Timeline extends Component {
     render() {
         return (
             <div className="timeline-wrapper">
+                <button className="logout-button" onClick={this.handleLogout}>Sair</button>
                 <img  height={24} src={twitterLogo} alt="Twitter logo" />
                 <form> 
                     <textarea value={this.state.newTweet}
