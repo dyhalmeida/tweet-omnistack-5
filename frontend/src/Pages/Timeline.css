@@ -1,0 +1,68 @@
+.timeline-wrapper {
+  width: 600px;
+  margin: 50px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+@media (max-width: 1000px) {
+  .timeline-wrapper {
+    width: 100% !important;
+  }
+  }
+
+.timeline-wrapper form {
+  width: 100%;
+  background: #e9f1f6;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.timeline-wrapper form textarea {
+  border: 3px solid #d8e5ed;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 15px;
+  width: 100%;
+  resize: none;
+}
+
+.tweet-list {
+  list-style: none;
+  color: #1c2022;
+}
+
+
+.logout-button {
+  top: 0px;
+  color: white;
+  width: 48px;
+  right: 0;
+  height: 48px;
+  padding: 0;
+  z-index: 999;
+  position: fixed;
+  min-width: 48px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin: 10px 0 0;
+  background: #4bb0ee;
+  border-radius: 5px;
+  width: 70px;
+  height: 44px;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+  .logout-button {
+    width: 38px;
+    height: 38px;
+  }
+  }
