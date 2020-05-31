@@ -4,6 +4,7 @@ const cors = require('cors');
 const dbmongo = require('./src/connection/TweetConnection');
 const app = express();
 const server = require('http').Server(app);
+const io = require('socket.io')(server);
 const routes = require('./src/routes/TweetRoute');
 
 require('dotenv').config();
@@ -26,6 +27,10 @@ const HOST = '0.0.0.0';
         process.exit()
     }
 })()
+app.use((req, res, next) => {
+    req.io = io;
+    return next();
+});
 app.use(cors());
 app.use(express.json());
 app.use(routes);
