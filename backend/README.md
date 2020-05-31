@@ -17,29 +17,24 @@
 - 📄 List all tweet messages
 - 🧡 Like in a tweet message
 
-<br>
-
 ## 🚀 Getting Started
 
 ### 💻 Installation
 ```bash
 npm install | yarn
 ```
-<br>
 
 ### 💻 Configure connection with mongodb
 ```bash
 # 1 - Rename the .env.example file to .env
 # 2 - Change the MONGODB variable to your mongodb connection string
 ```
-<br>
 
 ### 💻 Initialization
 
 ```bash
 npm start | yarn start
 ```
-<br>
 
 ## 🔓 License 
 MIT © [Diego Almeida](https://www.linkedin.com/in/dyhalmeida/)
